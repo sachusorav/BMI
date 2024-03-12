@@ -97,20 +97,18 @@ while True:
         else:
             print("No data received")    
         #decoded_data = raw_data.decode('utf-8').strip()
-         # Assuming the data is a single float value
 
         # Update the buffer with the new value
         eeg_buffer[:-1] = eeg_buffer[1:]
         eeg_buffer[-1] = eeg_value
         #eeg_buffer = np.convolve(eeg_buffer, np.ones(5)/5, mode='valid')
         #print(eeg_buffer)
-        # Apply notch filter
+        #  notch filter
         eeg_buffer = signal.filtfilt(b_notch, a_notch, eeg_buffer)
 
-        # Apply bandpass filter
+        #  bandpass filter
         eeg_buffer = signal.filtfilt(b_bandpass, a_bandpass, eeg_buffer)
 
-        # Feature extraction (similar to the training process)
         segment_features = calculate_psd_features(eeg_buffer,512)
         additional_features = calculate_additional_features(eeg_buffer, 512)
         segment_features = {**segment_features, **additional_features}
