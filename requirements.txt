@@ -1,5 +1,6 @@
-numpy==1.23.1
-scipy==1.9.0
-pandas==1.4.3
-pyserial==3.5
-pyautogui==0.9.53
+numpy
+scipy
+pandas
+pyserial
+pyautogui
+serial

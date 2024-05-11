@@ -1,8 +1,6 @@
 import serial
 import numpy as np
 from scipy import signal
-import joblib
-import re
 import time
 import scipy
 from scipy import signal
@@ -135,10 +133,10 @@ while True:
         print(f"Predicted Class: {prediction}")
         print(probabilities)
         #print(eeg_value)
-        #if prediction == 0:
-        #    pyautogui.keyDown('space')                                                                 
-        #elif prediction == 1:
-        #    pyautogui.keyDown('w')
+        if prediction == 0:
+            pyautogui.keyDown('space')                                                                 
+        elif prediction == 1:
+            pyautogui.keyDown('w')
         time.sleep(.5)
     except UnicodeDecodeError as e:
         print(f"Error decoding data: {e}")
