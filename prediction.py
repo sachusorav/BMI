@@ -10,6 +10,7 @@ import pandas as pd
 from collections import Counter
 import pyautogui
 import warnings
+import pickle
 
 warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
 
@@ -57,11 +58,13 @@ def calculate_additional_features(segment, sampling_rate):
         'spectral_centroid': spectral_centroid,
         'spectral_slope': spectral_slope
     }
-scaler = joblib.load('scaler3.joblib')
+with open('model.pkl', 'rb') as f:
+        clf = pickle.load(f)
+with open('scaler.pkl', 'rb') as f:
+        scaler = pickle.load(f)
 features = []
 columns = ['E_alpha', 'E_beta', 'E_theta', 'E_delta', 'alpha_beta_ratio','peak_frequency','spectral_centroid','spectral_slope']
 # Load the trained model
-clf = joblib.load('svm_model3.joblib')
 
 # Serial connection to Arduino
 ser = serial.Serial('COM6', baudrate=115200)  # Replace 'COMX' with your Arduino port
