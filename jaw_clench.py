@@ -1,3 +1,9 @@
+# Copyright (c) 2024 Umang Bansal
+# 
+# This software is the property of Umang Bansal. All rights reserved.
+# Unauthorized copying of this file, via any medium, is strictly prohibited.
+# Licensed under the MIT License. See the LICENSE file for details.
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import butter, filtfilt, iirnotch
