@@ -3,4 +3,3 @@ scipy
 pandas
 pyserial
 pyautogui
-serial
