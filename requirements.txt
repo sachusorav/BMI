@@ -3,3 +3,4 @@ scipy
 pandas
 pyserial
 pyautogui
+scikit-learn

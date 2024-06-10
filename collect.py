@@ -3,7 +3,7 @@ import csv
 import time
 import datetime  
 
-COM_PORT = 'COM5'  # Replace with your Arduino's COM port
+COM_PORT = 'COM6'  # Replace with your Arduino's COM port
 BAUD_RATE = 115200  # Must match the Arduino's BAUD_RATE
 
 # Open the serial connection
@@ -32,5 +32,4 @@ with open('signal.csv', 'a', newline='') as csvfile:
             # Save the data to the CSV file along with the timestamp
             csvwriter.writerow([current_time, values[0]])
 
-# Close the serial connection
 ser.close()
