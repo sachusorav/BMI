@@ -18,6 +18,8 @@ with open('signal.csv', 'a', newline='') as csvfile:
 
     start_time = time.time()
 
+    print("Collecting data...")
+
     while time.time() - start_time < max_duration:
         # Read a line of data from the Arduino (until a newline character)
         data = ser.readline().decode("latin-1").strip()
